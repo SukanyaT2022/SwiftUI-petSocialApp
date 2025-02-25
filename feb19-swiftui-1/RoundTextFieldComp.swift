@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct RoundTextFieldComp: View {
+    @State var filledValue:String = ""
+    
+ var placeholder:String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField( placeholder, text: $filledValue)
+            .frame(height: 44)
+            .multilineTextAlignment(TextAlignment.center)
+            .foregroundStyle(.blue)
+        .border(.blue)
+       
+        .padding([.leading,.trailing],16)
+        .padding([.top,.bottom],5)
     }
 }
 

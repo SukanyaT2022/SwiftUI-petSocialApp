@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum AppThemeColor{
+    static let  orange = "#f5b041"
+}
