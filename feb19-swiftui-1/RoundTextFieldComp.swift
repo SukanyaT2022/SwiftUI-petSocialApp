@@ -10,17 +10,25 @@ import SwiftUI
 struct RoundTextFieldComp: View {
     @State var filledValue:String = ""
     
- var placeholder:String = ""
+ var placeholder:String = "test"
     
     var body: some View {
-        TextField( placeholder, text: $filledValue)
+        TextField(placeholder, text: $filledValue)
             .frame(height: 44)
-            .multilineTextAlignment(TextAlignment.center)
+            .multilineTextAlignment(.center)
             .foregroundStyle(.blue)
-        .border(.blue)
-       
-        .padding([.leading,.trailing],16)
-        .padding([.top,.bottom],5)
+          
+            .padding(.horizontal, 30)
+            .padding(.vertical, 5)
+            .background(Color.white) // Ensure background is set
+            .cornerRadius(10)
+        
+        //overlay is like z-index
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.blue, lineWidth: 1.2)
+                    .padding([.leading,.trailing],16 )
+            )
     }
 }
 

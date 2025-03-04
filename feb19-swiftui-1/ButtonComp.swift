@@ -20,6 +20,7 @@ struct ButtonComp: View {
           
                 } label: {
                     Text("Log In")
+                        .font(.system(size: 18, weight:.bold, design: .serif))
                         .foregroundColor(.white)
                         .padding(16)
                         

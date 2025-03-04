@@ -16,13 +16,23 @@ struct ContentView: View {
     //connect green below line
         NavigationStack{
         
-            VStack (alignment:.center ){
+            VStack (alignment:.center, spacing: 20 ){
             
             Image(systemName: "dog")
+                    .resizable()
+                    .frame(width: 100, height: 80)
                 .imageScale(.large)
                 .foregroundStyle(.blue)
+                
             Text("Welcome to pet social!")
-            VStack{
+                    .padding(.bottom,15)
+                    .font(.custom("SourGummy-Medium", size: 24))
+//                    .font(.system(size: 20, weight: .bold, design: .serif))
+//                
+                
+                
+                VStack(spacing:20){
+                
                 
                 RoundTextFieldComp(filledValue: usernameVar, placeholder: "UserName")
                 RoundTextFieldComp(filledValue: passwordVar, placeholder: "Password")
@@ -30,7 +40,7 @@ struct ContentView: View {
                 //button connect to next screen
                 NavigationLink {
                     if (showAlert == false){
-                        SecondScreenView()
+                        RegisterScreenView()
                     }
 
                     
@@ -56,6 +66,23 @@ struct ContentView: View {
                         }
                     } message: {
                         Text(alertMessage)
+                    }
+                    VStack{
+                        
+                
+                    Button {
+                        //button connect to next screen
+                        NavigationStack{
+                            NavigationLink("Register"){
+                                if (showAlert == false){
+                                    RegisterScreenView()
+                                }
+                            }
+                        }
+                        
+                    } label: {
+                       Text("Register")
+                    }
                     }
                 }
             }
