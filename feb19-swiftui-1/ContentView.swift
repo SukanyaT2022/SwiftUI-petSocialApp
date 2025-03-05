@@ -16,84 +16,65 @@ struct ContentView: View {
     //connect green below line
         NavigationStack{
         
-            VStack (alignment:.center, spacing: 20 ){
-            
-            Image(systemName: "dog")
+            VStack (alignment:.center, spacing: 20){
+                
+                //top header view
+                Image(systemName: "dog")
                     .resizable()
                     .frame(width: 100, height: 80)
-                .imageScale(.large)
-                .foregroundStyle(.blue)
+                    .imageScale(.large)
+                    .foregroundStyle(.blue)
                 
             Text("Welcome to pet social!")
                     .padding(.bottom,15)
                     .font(.custom("SourGummy-Medium", size: 24))
-//                    .font(.system(size: 20, weight: .bold, design: .serif))
-//                
-                
-                
-                VStack(spacing:20){
-                
-                
-                RoundTextFieldComp(filledValue: usernameVar, placeholder: "UserName")
-                RoundTextFieldComp(filledValue: passwordVar, placeholder: "Password")
-                
-                //button connect to next screen
-                NavigationLink {
-                    if (showAlert == false){
-                        RegisterScreenView()
-                    }
 
+                VStack(spacing:20){
+                    RoundTextFieldComp(filledValue: usernameVar, placeholder: "UserName")
+                    RoundTextFieldComp(filledValue: passwordVar, placeholder: "Password")
                     
-                } label: {
-                    ButtonComp( handler : {
-                        if(usernameVar.isEmpty && passwordVar.isEmpty){
-                            showAlert = true
-                            alertMessage = "Foget username and password!"
-                        }
-                        else if(usernameVar.isEmpty){
-                            showAlert = true
-                            alertMessage = "Forget Username!"
-                            
-                        }else if(passwordVar.isEmpty){
-                            showAlert = true
-                            alertMessage = "Forget Password!"
-                        }
-                    })
-                    .alert("Important Message", isPresented: $showAlert) {
-                        Button("Cancel", role: .cancel) { }
-                        Button("OK") {
-                            // Handle OK action here
-                        }
-                    } message: {
-                        Text(alertMessage)
-                    }
-                    VStack{
-                        
+                }
+                //close v stack
                 
-                    Button {
-                        //button connect to next screen
-                        NavigationStack{
-                            NavigationLink("Register"){
-                                if (showAlert == false){
-                                    RegisterScreenView()
-                                }
-                            }
-                        }
+                ButtonComp( handler : {
+                    if(usernameVar.isEmpty && passwordVar.isEmpty){
+                        showAlert = true
+                        alertMessage = "Foget username and password!"
+                    }
+                    else if(usernameVar.isEmpty){
+                        showAlert = true
+                        alertMessage = "Forget Username!"
                         
-                    } label: {
-                       Text("Register")
+                    }else if(passwordVar.isEmpty){
+                        showAlert = true
+                        alertMessage = "Forget Password!"
                     }
+                })
+                Text("No Account? Please register")
+                    .onTapGesture {
+                        navigateToRegisterScreen()
                     }
+//this padding box the whole vtasck down after push up by spacer()
+            }.padding(.top,100)
+            Spacer()
                 }
             }
-              Spacer()//take space from the bottom and  all element move up
-            }.padding(.top,200)
-            
-        //below cloding } from navigation
+
+
+    
+    //out of body
+    // Function to navigate to NextScreen
+        func navigateToRegisterScreen() {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = UIHostingController(rootView: RegisterScreenView())
+                window.makeKeyAndVisible()
+            }
+        }
+
         }
        
-    }
-}
+
 
 #Preview {
     ContentView()
