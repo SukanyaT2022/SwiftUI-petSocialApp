@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ButtonComp: View {
     //completion handler like like call back function in react
+    var buttonTitle: String = "Login"
     var handler: (() -> Void)
-    
     var body: some View {
        
 
@@ -19,7 +19,7 @@ struct ButtonComp: View {
             handler()
           
                 } label: {
-                    Text("Log In")
+                    Text(buttonTitle)
                         .font(.system(size: 18, weight:.bold, design: .serif))
                         .foregroundColor(.white)
                         .padding(16)
@@ -29,13 +29,10 @@ struct ButtonComp: View {
 //                .background(Color(red: 52/255, green: 152/255, blue:219/255) )
 //                .background(Color(hex:"#eb984e ") )
         //width of the button - 32 padding left 16 and right 16
-                .frame(width: UIScreen.main.bounds.size.width - 32, height: 44)
+                .frame(width: UIScreen.main.bounds.size.width - 32, height: 50)
                 .background(Color(hex: AppThemeColor.orange) )
-                      .cornerRadius(4.0)
-                    
-       
-                   
-
+                      .cornerRadius(8.0)
+                
       
     }
 }

@@ -11,7 +11,11 @@ struct RegisterScreenView: View {
     var userDetailClass:UserClass = UserClass()
 
     var body: some View {
-        VStack{
+        NavigationStack{
+            
+           
+            VStack(alignment: .center){
+             
             Image("m1")
                 .resizable()
                 .frame(width: 200, height: 200)
@@ -20,7 +24,7 @@ struct RegisterScreenView: View {
             Text("Sign up to Join Pet Social!")
                 .font(.title)
                 .padding()
-            VStack{
+            VStack (spacing: 20){
                 
 //                RoundTextFieldComp(filledValue:petDetailClass.name)
                 RoundTextFieldComp(filledValue:userDetailClass.name, placeholder: "Name")
@@ -28,12 +32,27 @@ struct RegisterScreenView: View {
                 RoundTextFieldComp(filledValue:userDetailClass.username, placeholder: "Username")
                 RoundTextFieldComp(filledValue:userDetailClass.password, placeholder: "Password")
                 RoundTextFieldComp(filledValue:userDetailClass.password, placeholder: "Email")
+                ButtonComp(buttonTitle: "Sign Up", handler: {
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = windowScene.windows.first{
+                        window.rootViewController = UIHostingController(rootView: HomeView(
+                          )
+                        )
+                        window.makeKeyAndVisible()
+                      
+                    }
                 
+                }
+
+              )
+                //                closing end of button component and connect screen if
             }
-          
+                Spacer()
         }
-        Spacer()
-       
+            //end main v stack
+        }
+  
+          
     }
 }
 

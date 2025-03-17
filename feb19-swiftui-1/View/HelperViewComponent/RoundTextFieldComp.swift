@@ -23,6 +23,7 @@ struct RoundTextFieldComp: View {
             .background(Color.white) // Ensure background is set
             .cornerRadius(10)
         
+        
         //overlay is like z-index
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

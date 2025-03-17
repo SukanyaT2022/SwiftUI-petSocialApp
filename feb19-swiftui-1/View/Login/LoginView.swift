@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     @State var usernameVar:String = ""
     @State var passwordVar:String = ""
     @State var showAlert:Bool = false
@@ -59,9 +59,6 @@ struct ContentView: View {
             Spacer()
                 }
             }
-
-
-    
     //out of body
     // Function to navigate to NextScreen
         func navigateToRegisterScreen() {
@@ -77,5 +74,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    LoginView()
 }
