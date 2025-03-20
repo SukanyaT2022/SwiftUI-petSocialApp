@@ -17,13 +17,13 @@ class APIService {
 
     private init() {}  // Prevents multiple instances
 
-    func fetchDogs() async throws -> [PetData] {
+    func fetchDogs() async throws -> PetData {
       
-
+        // JSON ===(Big Equal to) Dictionary in swift
         // Fetch data from API
 //        let (data, _) = try await URLSession.shared.data(from: url)
         
-        return try await NetworkManager.shared.fetch(url: ApiEndPoint.dogApi, model: [PetData].self)
+        return try await NetworkManager.shared.fetch(url: ApiEndPoint.dogApi, model: PetData.self)
         
         // Decode JSON into an array of Post objects
 

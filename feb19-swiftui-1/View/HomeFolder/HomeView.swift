@@ -15,8 +15,17 @@ struct HomeView: View {
         NavigationStack{
             VStack{
                 Text("HomeScreen")
-                List(viewModel.petData.first?.data ?? []) { item in
-                    Text(item.type)
+                List(viewModel.petData?.data ?? []) { item in
+                    Text(item.attributes?.name ?? "")
+                        .font(.title)
+                        .foregroundStyle(Color.red)
+                        .fontWeight(.bold)
+                    Text(item.attributes?.description ?? "")
+                        .font(.footnote)
+                        .foregroundColor(Color.blue)
+                        .fontWeight(.light)
+                        .lineLimit(3)
+                        
                 }
                 
                 ButtonComp(buttonTitle: "go back to register", handler:  {
