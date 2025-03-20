@@ -6,7 +6,7 @@
 //
 
 struct FactData: Codable {
-      let data: [Pet]
+    let data: [Fact]
 
 }
 

@@ -15,6 +15,10 @@ struct HomeView: View {
         NavigationStack{
             VStack{
                 Text("HomeScreen")
+                Text("FactData")
+                Text(viewModel.factData?.data.first?.attributes.body ?? "")
+                
+                
                 List(viewModel.petData?.data ?? []) { item in
                     Text(item.attributes?.name ?? "")
                         .font(.title)
@@ -31,7 +35,7 @@ struct HomeView: View {
                 ButtonComp(buttonTitle: "go back to register", handler:  {
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let window = windowScene.windows.first{
-                        window.rootViewController = UIHostingController(rootView: RegisterScreenView(
+                        window.rootViewController = UIHostingController(rootView: PetRegister(
                           )
                         )
                         window.makeKeyAndVisible()
@@ -49,6 +53,7 @@ struct HomeView: View {
         //below we call the api inside task
         .task {
             await viewModel.loadDogList()
+            await viewModel.loadFact()
         }
         }
       

@@ -11,7 +11,9 @@ class DogViewModel: ObservableObject {
     @Published var factData: FactData?
     @Published var isLoading = false
     @Published var errorMessage: String?
-//what function do? explain tomorrw
+ //all logic deal with datat we keep in view model
+//what function do? explain tomorrw --answer for many api that why we crate amny function
+    //first api for a list of dog
     func loadDogList() async {
         isLoading = true
         errorMessage = nil
@@ -22,12 +24,12 @@ class DogViewModel: ObservableObject {
         }
         isLoading = false
     }
-    
+    //second api
     func loadFact() async {
         isLoading = true
         errorMessage = nil
         do {
-            petData = try await APIService.shared.fetchDogs()
+            factData = try await APIService.shared.fetchFactData()
         } catch {
             errorMessage = "Failed to fetch posts: \(error.localizedDescription)"
         }
