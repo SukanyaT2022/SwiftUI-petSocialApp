@@ -7,10 +7,12 @@
 
 import Foundation
 
-class UserClass{
+struct UserClass{
     var name:String = ""
     var username:String = ""
     var password:String = ""
     var email:String = ""
     
 }
+
+

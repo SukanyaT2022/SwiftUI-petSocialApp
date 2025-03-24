@@ -9,8 +9,7 @@ import SwiftUI
 
 struct RoundTextFieldComp: View {
     @State var filledValue:String = ""
-    
- var placeholder:String = "test"
+    var placeholder:String = "test"
     
     var body: some View {
         TextField(placeholder, text: $filledValue)

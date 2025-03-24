@@ -13,14 +13,14 @@ struct RegisterScreenView: View {
     var body: some View {
         NavigationStack{
             
-           
             VStack(alignment: .center){
-             
-            Image("m1")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .cornerRadius(100)
-                .padding(.top,80)
+                AddPhotoCompView()
+                    .padding(.top,40)
+//            Image("m1")
+//                .resizable()
+//                .frame(width: 200, height: 200)
+//                .cornerRadius(100)
+//                .padding(.top,80)
             Text("Sign up to Join Pet Social!")
                 .font(.title)
                 .padding()

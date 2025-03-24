@@ -6,10 +6,12 @@
 //
 
 import Foundation
-class PetClass{
+struct PetClass{
     var name = ""
     var type = ""
     var age = ""
     var size = ""
     var breed = ""
+    var DOB = ""
+    var gender = ""
 }
