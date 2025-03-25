@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct PetDetail: View {
+    let petProperty = ["Breed", "Age", "Gender", "Size"]
     var body: some View {
-        VStack{
-
-            SquarePhotoImageView()
-            NameGridCompView()
-            Spacer()
+        
             
-        }
-       
-     //padding for the parent
-        .padding(20)
+            VStack{
+//                ScrollView(.vertical, showsIndicators: false){
+                SquarePhotoImageView()
+                NameGridCompView()
+//                Spacer()
+                List(petProperty, id: \.self){item in
+                       
+                    PetPropertyIndividualBoxCompView(leftTiltle: item, rightTiltle: "")
+                }
+            }
+           
+         //padding for the parent
+            .padding(2)
+            
+//        }
+   
     }
 }
 
