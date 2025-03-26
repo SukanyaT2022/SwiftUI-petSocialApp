@@ -19,7 +19,7 @@ struct PetDetail: View {
 //                Spacer()
                 List(petProperty, id: \.self){item in
                        
-                    PetPropertyIndividualBoxCompView(leftTiltle: item, rightTiltle: "")
+                    PetPropertyIndividualBoxCompView(leftTiltle: item, rightTiltle: "pet info")
                 }
             }
            

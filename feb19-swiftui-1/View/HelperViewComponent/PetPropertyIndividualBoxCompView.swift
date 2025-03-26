@@ -28,6 +28,7 @@ struct PetPropertyIndividualBoxCompView: View {
         }
       
         .padding(.vertical,20)
+        .padding(.horizontal,20)
         .background(Color.green.opacity(0.2))
     }
 }
