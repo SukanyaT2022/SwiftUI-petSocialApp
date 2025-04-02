@@ -15,7 +15,7 @@ struct PetDetail: View {
             VStack{
 //                ScrollView(.vertical, showsIndicators: false){
                 SquarePhotoImageView()
-                NameGridCompView()
+                NameInfoGridBarCompView()
 //                Spacer()
                 List(petProperty, id: \.self){item in
                        

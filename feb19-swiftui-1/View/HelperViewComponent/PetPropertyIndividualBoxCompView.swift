@@ -17,12 +17,12 @@ struct PetPropertyIndividualBoxCompView: View {
                 .frame(width: 50, height: 50)
             
             Text(leftTiltle)
-                .font(Font.system(size: 25))
+                .font(Font.system(size: 16))
                 .fontWeight(.semibold)
                 .padding(.leading,10)
             Spacer()
             Text(rightTiltle)
-                .font(Font.system(size: 25))
+                .font(Font.system(size: 16))
                 .fontWeight(.semibold)
             
         }

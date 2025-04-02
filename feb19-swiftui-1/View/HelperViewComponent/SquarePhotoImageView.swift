@@ -14,16 +14,14 @@ struct SquarePhotoImageView: View {
                 Spacer()
                 Image(systemName: "camera.fill")
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 30, height: 30)
                     .aspectRatio(contentMode: .fit)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 60))
-                    
             }
           
-               
             Image("m1")
                 .resizable()
-                .frame(width: 300, height: 300)
+                .frame(width: 200, height: 200)
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(30)
             
