@@ -28,7 +28,7 @@ struct PetSocialMediaView: View {
                             .frame(width: 160, height: 160)
                             .background(Color.orange)
                             .foregroundColor(Color.black)
-                            .cornerRadius(5)
+                            .cornerRadius(10)
                             .aspectRatio(contentMode: .fit)
                             .background(Color.red)
                             .padding(16)
