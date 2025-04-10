@@ -33,6 +33,11 @@ struct HomeView: View {
                     }
                 }
                 .padding(.top,40)
+//                end search bar and round filter
+                
+                CatergoryViewAllBarView(leftTitle: "Catergory", buttonTitle: "View All") {
+                    
+                }
              
                 Spacer()
                 
@@ -55,6 +60,8 @@ struct HomeView: View {
                 .padding(.top, 80)
                 .fontWeight(.semibold)
             )
+            
+            
             
         }
     }
