@@ -30,7 +30,7 @@ struct PetSocialMediaView: View {
                             .foregroundColor(Color.black)
                             .cornerRadius(10)
                             .aspectRatio(contentMode: .fit)
-                            .background(Color.red)
+                          
                             .padding(16)
                             
                     }

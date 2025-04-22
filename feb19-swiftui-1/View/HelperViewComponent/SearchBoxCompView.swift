@@ -11,15 +11,19 @@ struct SearchBoxCompView: View {
     @State var storeUserInput: String = ""
     var body: some View {
         HStack{
-          
             Image(systemName: "magnifyingglass")
                 .padding(.leading,8)
             TextField("Search here...", text: $storeUserInput)
                 .padding(10)
-        
+             
         }
-        .border(Color.gray, width: 1)
+        .frame(minHeight: 50)
+        .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
         .padding(16)
+       
     }
 }
 
