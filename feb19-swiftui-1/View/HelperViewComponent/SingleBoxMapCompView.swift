@@ -19,13 +19,13 @@ struct SingleBoxMapCompView: View {
                 ForEach(friendTypeArr, id: \.self) { item in
                     Text(item)
                     
-                        .frame(width: 100)
+                        .frame(width: 90)
                         .frame(height: 50)
                         .lineLimit(2, reservesSpace: false)//2 line only after that show ...
                         .padding(.horizontal,8)
                         .background(Color.white.opacity(0.2))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 8)
+                            RoundedRectangle(cornerRadius: 6)
                                 .stroke(Color.orange, lineWidth: 2)
                                 .padding(.horizontal,2)
                         )

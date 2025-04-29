@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchBoxCompView: View {
     @State var storeUserInput: String = ""
+    var borderColorVar: Color = .gray
     var body: some View {
         HStack{
             Image(systemName: "magnifyingglass")
@@ -19,8 +20,8 @@ struct SearchBoxCompView: View {
         }
         .frame(minHeight: 50)
         .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(borderColorVar, lineWidth: 2)
                 )
         .padding(16)
        

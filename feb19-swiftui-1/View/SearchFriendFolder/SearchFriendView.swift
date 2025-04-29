@@ -10,16 +10,18 @@ import SwiftUI
 struct SearchFriendView: View {
    
     var body: some View {
-        VStack(spacing: 10){
-            SearchBoxCompView()
+        VStack(spacing: 1){
+            SearchBoxCompView(borderColorVar: .init(Color(hex: AppThemeColor.orange)))
             
             SingleBoxMapCompView()
                 .padding(.horizontal, 20)
                 .frame( height: 80)
-            Spacer()
+            StaggeredGridExample()
         }
         .padding(.top,20)
+        VStack{
       
+        }
     
        
     }

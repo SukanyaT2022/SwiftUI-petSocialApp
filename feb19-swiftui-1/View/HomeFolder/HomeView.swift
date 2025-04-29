@@ -18,9 +18,8 @@ struct HomeView: View {
             
             VStack(alignment:.leading){
                 
-                    
                 HStack{
-                    SearchBoxCompView()
+                    SearchBoxCompView(borderColorVar:Color(hex: AppThemeColor.orange))
                     
                     Button {
                         
@@ -43,7 +42,7 @@ struct HomeView: View {
                 
             }
 //          above close main vstack
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 5)
             .padding(.top,15)
             //searcable is searchbox not component
 //            .searchable(text: $searchText)
@@ -51,12 +50,13 @@ struct HomeView: View {
             //above end navigation stack
 //            .navigationBarItems(leading: <#T##View#>, trailing: <#T##View#>)
 // for navigation leading btn
-            .navigationBarItems(leading:  VStack(alignment:.leading){
+            .navigationBarItems(leading:  VStack(alignment:.leading, spacing: 10){
                 Text("Let's Find")
                 Text("Little Friends!")
                     .font(.title)
             }
-                .padding(.leading, 20)
+                                
+                .padding(.leading, 5)
                 .padding(.top, 80)
                 .fontWeight(.semibold)
             )
