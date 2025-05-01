@@ -37,6 +37,10 @@ struct HomeView: View {
                 CatergoryViewAllBarView(leftTitle: "Catergory", buttonTitle: "View All") {
                     
                 }
+
+                OvalPetTypeMapCompView()
+                    .padding(.bottom,30)
+                  
              
                 Spacer()
                 
@@ -56,12 +60,10 @@ struct HomeView: View {
                     .font(.title)
             }
                                 
-                .padding(.leading, 5)
+            .padding(.leading, 5)
                 .padding(.top, 80)
                 .fontWeight(.semibold)
             )
-            
-            
             
         }
     }

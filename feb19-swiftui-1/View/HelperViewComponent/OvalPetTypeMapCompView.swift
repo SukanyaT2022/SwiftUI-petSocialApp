@@ -8,22 +8,63 @@
 import SwiftUI
 
 struct OvalPetTypeMapCompView: View {
+//    let petArray:[String] = ["cat","dog","bird","fish","lizard"]
+    
+    struct Pet: Identifiable{
+        let name:String
+        let imageName:String
+        let id = UUID()
+    }
+    
+    let petArray: [Pet] = [
+        Pet(name: "cat", imageName: "img1"),
+        Pet(name: "dog", imageName: "img2"),
+        Pet(name: "bird", imageName: "img1"),
+        Pet(name: "fish", imageName: "img2"),
+        Pet(name: "lizard", imageName: "img1"),
+        ]
+    var rows: [GridItem] = [
+        GridItem(.flexible(minimum: 50))
+    ]
+    
     var body: some View {
-        VStack(spacing: 20){
-            Image("img1")
-                .resizable()
-                .frame(width: 50, height: 50)
-            Text("cat")
+        ScrollView(.horizontal){
+            LazyHGrid(rows: rows, spacing: 1) {
+                    ForEach(petArray) { pet in
+                        OvalBoxView(petType: pet.name, petImage: pet.imageName)
+                    }
+                }
+                .padding() // Add padding for better spacing
+            }
         }
-        .frame(width: 100, height: 100)
-        .background(Color.gray)
-        .border(Color.blue)
-        .padding(20)
-        .cornerRadius(50)
-       
+    
+   
+
+
+    struct OvalBoxView: View{
+        let petType : String
+        let petImage: String
+        var body: some View {
+            VStack(spacing: 20){
+                Image(petImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 80, height: 80)
+                    .clipShape(Circle())
+                Text(petType)
+            }
+            .frame(width: 110, height: 160)
+            .background(Color.gray)
+            .clipShape(RoundedRectangle(cornerRadius: 85)) // Half of width/height for fully rounded
+            .overlay(
+                RoundedRectangle(cornerRadius: 85)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+            .padding(.trailing,15)
+            
+        }
     }
 }
-
 #Preview {
     OvalPetTypeMapCompView()
 }
