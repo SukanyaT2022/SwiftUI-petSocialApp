@@ -28,7 +28,8 @@ struct OvalPetTypeMapCompView: View {
     ]
     
     var body: some View {
-        ScrollView(.horizontal){
+//        showsIndicators: false for remove slide var 
+        ScrollView(.horizontal, showsIndicators: false){
             LazyHGrid(rows: rows, spacing: 1) {
                     ForEach(petArray) { pet in
                         OvalBoxView(petType: pet.name, petImage: pet.imageName)
