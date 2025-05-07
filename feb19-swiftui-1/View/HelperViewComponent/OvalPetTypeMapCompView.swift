@@ -39,9 +39,6 @@ struct OvalPetTypeMapCompView: View {
             }
         }
     
-   
-
-
     struct OvalBoxView: View{
         let petType : String
         let petImage: String
@@ -55,7 +52,7 @@ struct OvalPetTypeMapCompView: View {
                 Text(petType)
             }
             .frame(width: 110, height: 160)
-            .background(Color.gray)
+            .background(Color(hex: AppThemeColor.veryLightGray))
             .clipShape(RoundedRectangle(cornerRadius: 85)) // Half of width/height for fully rounded
             .overlay(
                 RoundedRectangle(cornerRadius: 85)

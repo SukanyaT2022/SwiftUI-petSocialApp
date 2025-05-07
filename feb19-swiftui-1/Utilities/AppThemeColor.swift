@@ -11,4 +11,6 @@ enum AppThemeColor{
     static let  orange = "#f39c12"
     static let lightGray = "#f2f2f2"
     static let yellow = "#f1c40f"
+    static let veryLightGray = "#e5e8e8"
+  
 }

@@ -1,0 +1,201 @@
+{
+    "pets": [
+        {
+            "pet_name": "Buddy",
+            "type": "dog",
+            "address": {
+                "street": "123 Main Street",
+                "city": "Springfield",
+                "state": "Illinois"
+            },
+            "year_of_birth": 2018,
+            "age": 7,
+            "breed": "Golden Retriever",
+            "activities": ["fetch", "swimming", "running"],
+        "image": "dog1bg"
+        },
+        {
+            "pet_name": "Whiskers",
+            "type": "cat",
+            "address": {
+                "street": "456 Oak Avenue",
+                "city": "Shelbyville",
+                "state": "Indiana"
+            },
+            "year_of_birth": 2020,
+            "age": 5,
+            "breed": "Siamese",
+            "activities": ["climbing", "napping", "chasing lasers"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Polly",
+            "type": "bird",
+            "address": {
+                "street": "789 Elm Street",
+                "city": "Capital City",
+                "state": "Ohio"
+            },
+            "year_of_birth": 2015,
+            "age": 10,
+            "breed": "Parrot",
+            "activities": ["talking", "flying", "eating fruits"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Goldie",
+            "type": "fish",
+            "address": {
+                "street": "101 Aquarium Lane",
+                "city": "Oceanview",
+                "state": "California"
+            },
+            "year_of_birth": 2022,
+            "age": 3,
+            "breed": "Goldfish",
+            "activities": ["swimming", "blowing bubbles"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Rocky",
+            "type": "dog",
+            "address": {
+                "street": "12 Maple Street",
+                "city": "Austin",
+                "state": "Texas"
+            },
+            "year_of_birth": 2016,
+            "age": 9,
+            "breed": "Bulldog",
+            "activities": ["chewing toys", "snoring", "playing tug"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Luna",
+            "type": "cat",
+            "address": {
+                "street": "98 Willow Drive",
+                "city": "Portland",
+                "state": "Oregon"
+            },
+            "year_of_birth": 2021,
+            "age": 4,
+            "breed": "Persian",
+            "activities": ["lounging", "bird watching", "eating treats"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Kiwi",
+            "type": "bird",
+            "address": {
+                "street": "301 Vine Lane",
+                "city": "Boulder",
+                "state": "Colorado"
+            },
+            "year_of_birth": 2017,
+            "age": 8,
+            "breed": "Canary",
+            "activities": ["singing", "perching", "flying"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Bubbles",
+            "type": "fish",
+            "address": {
+                "street": "200 Coral Reef Road",
+                "city": "Key West",
+                "state": "Florida"
+            },
+            "year_of_birth": 2023,
+            "age": 2,
+            "breed": "Betta",
+            "activities": ["floating", "gliding", "exploring plants"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Max",
+            "type": "dog",
+            "address": {
+                "street": "1 Dogwood Blvd",
+                "city": "Seattle",
+                "state": "Washington"
+            },
+            "year_of_birth": 2019,
+            "age": 6,
+            "breed": "Labrador",
+            "activities": ["hiking", "fetch", "digging"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Mittens",
+            "type": "cat",
+            "address": {
+                "street": "77 Clover St",
+                "city": "Boston",
+                "state": "Massachusetts"
+            },
+            "year_of_birth": 2018,
+            "age": 7,
+            "breed": "Maine Coon",
+            "activities": ["exploring", "hiding", "eating"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Sunny",
+            "type": "bird",
+            "address": {
+                "street": "15 Sunflower Ave",
+                "city": "Tucson",
+                "state": "Arizona"
+            },
+            "year_of_birth": 2020,
+            "age": 5,
+            "breed": "Cockatiel",
+            "activities": ["whistling", "dancing", "flapping"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Flash",
+            "type": "fish",
+            "address": {
+                "street": "800 Wave Way",
+                "city": "Santa Cruz",
+                "state": "California"
+            },
+            "year_of_birth": 2021,
+            "age": 4,
+            "breed": "Neon Tetra",
+            "activities": ["schooling", "darting", "shimmering"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Charlie",
+            "type": "dog",
+            "address": {
+                "street": "16 Cherry Lane",
+                "city": "Denver",
+                "state": "Colorado"
+            },
+            "year_of_birth": 2017,
+            "age": 8,
+            "breed": "Beagle",
+            "activities": ["sniffing", "howling", "chasing squirrels"],
+            "image": "dog2bg"
+        },
+        {
+            "pet_name": "Nala",
+            "type": "cat",
+            "address": {
+                "street": "909 Jasmine Court",
+                "city": "Savannah",
+                "state": "Georgia"
+            },
+            
+            "year_of_birth": 2016,
+            "age": 9,
+            "breed": "Bengal",
+            "activities": ["jumping", "hiding", "watching TV"],
+            "image": "dog2bg"
+        }
+    ]
+    }

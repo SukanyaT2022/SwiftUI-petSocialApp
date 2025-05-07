@@ -11,7 +11,7 @@ import SwiftUI
 struct feb19_swiftui_1App: App {
     var body: some Scene {
         WindowGroup {
-            PetDetail()
+            SimpleTabBarView()
         }
     }
 }

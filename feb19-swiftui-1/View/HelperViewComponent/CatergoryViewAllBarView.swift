@@ -15,17 +15,17 @@ struct CatergoryViewAllBarView: View {
     var body: some View {
         HStack{
             Text(leftTitle ?? "test")
-                .font(.title2)
+                .font(.title3)
             Spacer()
        Button {
                 tappedHandler?()
             } label: {
                 Text(buttonTitle ?? "test2")
-                    .font(.title2)
+                    .font(.title3)
                     .foregroundColor(.black)
             }
         }
-        .padding(.horizontal,16)
+        .padding(.horizontal,20)
     }
 }
 
