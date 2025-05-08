@@ -36,12 +36,12 @@ struct HomeView: View {
     }
     
     var rows: [GridItem] = [
-        GridItem(.flexible(minimum: 50))
+        GridItem(.flexible(minimum: 50),spacing: 0)
     ]
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading) {
                 HStack(spacing: 0) {
                     SearchBoxCompView(borderColorVar: Color(hex: AppThemeColor.orange))
                     
@@ -53,16 +53,19 @@ struct HomeView: View {
                             .frame(width: 40, height: 40)
                             .foregroundColor(.orange)
                     }
-                }
-                .padding(.top, 50)
+                }//close hstack
+                
+                                .padding(.top, -30)
                 
                 CatergoryViewAllBarView(leftTitle: "Catergory", buttonTitle: "View All") {
                     
                 }
                 
                 OvalPetTypeMapCompView()
-                    .frame(height: 250)
-                    // .padding(.vertical, 5)
+                    .padding(.bottom, 10)
+                    .frame(height: 180)
+                    .padding(.vertical, 5)
+                    .background(Color.green)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows, spacing: 15) {
@@ -75,28 +78,38 @@ struct HomeView: View {
                             .padding(.vertical, 10)
                             .frame(width: 200)
                         }
-                        .padding(.top, -30)
+                        //                        .padding(.top, -50)
                         .padding(.leading, 25)
-                    }
+                    }//close lazy grid
+                    .frame(height: 220)
+                    .background(Color.pink)
                     .onAppear {
                         pets = loadPetBreedsFromJSON()
                     }
-                    
-                    Spacer()
-                }
+            
+                }//close scrollview
+                .frame(height: 220)
+                .background(Color.blue)
                 .padding(.horizontal, 5)
                 
-                .navigationBarItems(leading: VStack(alignment: .leading, spacing: 10) {
-                    Text("Let's Find")
-                    Text("Little Friends!")
-                        .font(.title)
-                }
-                .padding(.leading, 5)
-                .padding(.top, 80)
-                .fontWeight(.semibold))
-            }
+                
+                Spacer()
+            }//close main v stack
+            
             .padding(.leading, 10)
             .padding(.trailing, 10)
+            
+            .navigationBarItems(leading: VStack(alignment: .leading, spacing: 10) {
+                Text("Let's Find")
+                    .padding(.top, 50)
+                Text("Little Friends!")
+                    .font(.title)
+            }
+            )
+            .padding(.leading, 5)
+            .padding(.top, 80)
+            .fontWeight(.semibold)
+            
         }
     }
 }

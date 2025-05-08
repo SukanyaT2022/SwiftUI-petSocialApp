@@ -57,6 +57,6 @@ struct SimpleTabBarView: View {
 //        Text("ProspectsView")
 //    }
 //}
-//#Preview {
-//    SimpleTabBarView()
-//}
+#Preview {
+    SimpleTabBarView()
+}
