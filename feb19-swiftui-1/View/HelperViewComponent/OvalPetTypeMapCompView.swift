@@ -26,16 +26,36 @@ struct OvalPetTypeMapCompView: View {
     var rows: [GridItem] = [
         GridItem(.flexible(minimum: 50))
     ]
+    @State var selectedPet: String? = nil
     
     var body: some View {
 //        showsIndicators: false for remove slide var 
         ScrollView(.horizontal, showsIndicators: false){
             LazyHGrid(rows: rows, spacing: 1) {
+       
                     ForEach(petArray) { pet in
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(selectedPet == pet.name ? Color(hex: AppThemeColor.orange).opacity(0.2) : Color.gray.opacity(0.5))
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .onTapGesture {
+                                 
+                                    if selectedPet == pet.name{
+                                        selectedPet = nil
+                                    }else{
+                                        selectedPet = pet.name
+                                    }
+                                }
+                        }
+                        
                         OvalBoxView(petType: pet.name, petImage: pet.imageName)
                     }
-                }
+                }//close lazyHgride
                 .padding() // Add padding for better spacing
+            
+            
             }
         }
     

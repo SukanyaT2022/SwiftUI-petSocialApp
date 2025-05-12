@@ -1,7 +1,7 @@
 {
     "pets": [
         {
-            "pet_name": "Buddy",
+            "pet_name": "BB2",
             "type": "dog",
             "address": {
                 "street": "123 Main Street",
@@ -127,6 +127,20 @@
             "image": "dog2bg"
         },
         {
+            "pet_name": "MaxiBooBoo",
+            "type": "dog",
+            "address": {
+                "street": "1 Dogwood Blvd",
+                "city": "Seattle",
+                "state": "Washington"
+            },
+            "year_of_birth": 2019,
+            "age": 5,
+            "breed": "Labrador",
+            "activities": ["hiking", "fetch", "digging"],
+            "image": "dog2bg"
+        },
+        {
             "pet_name": "Mittens",
             "type": "cat",
             "address": {
@@ -196,6 +210,22 @@
             "breed": "Bengal",
             "activities": ["jumping", "hiding", "watching TV"],
             "image": "dog2bg"
-        }
+        },
+        {
+            "pet_name": "Sky",
+            "type": "bird",
+            "address": {
+                "street": "909 Jasmine Court",
+                "city": "Savannah",
+                "state": "Georgia"
+            },
+            
+            "year_of_birth": 2016,
+            "age": 9,
+            "breed": "Bengal",
+            "activities": ["jumping", "hiding", "watching TV"],
+            "image": "dog2bg"
+        },
+        
     ]
     }

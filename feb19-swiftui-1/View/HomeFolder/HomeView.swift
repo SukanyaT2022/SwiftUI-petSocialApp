@@ -6,11 +6,53 @@
 //
 
 import SwiftUI
-
+enum PetCatergory: String {
+    case dog
+    case cat
+    case bird
+    case fish
+  case others
+}
 struct HomeView: View {
     //store what user enter in search box
-    @State var searchText:String = ""
+    //pur enum below - default is dog
+    @State var catergory: PetCatergory = .dog
     
+    @State var searchText: String = ""
+    
+ var filteredItems: [PetBreedModal] {
+     print(searchText)
+     //if nothting on search box then showll pets
+     switch catergory {
+         case .dog:
+         if searchText.isEmpty {
+                    return pets
+                } else {
+                    return pets.filter {
+                        $0.type.lowercased()==("dog".lowercased())
+                        || $0.breed.lowercased().contains(searchText.lowercased())
+                    }
+                }
+         case .cat:
+         if searchText.isEmpty {
+                    return pets
+                } else {
+                    return pets.filter {
+                        $0.type.lowercased()==("cat".lowercased())
+                        || $0.breed.lowercased().contains(searchText.lowercased())
+                    }
+                }
+         
+    
+     case .bird:
+        break
+     case .fish:
+        break
+     case .others:
+       break
+     }
+   return []
+        }
     @State private var pets: [PetBreedModal] = []
     
     //    var rows: [GridItem] = [
@@ -18,6 +60,10 @@ struct HomeView: View {
     //    ]
     
     
+    var rows: [GridItem] = [
+        GridItem(.flexible(minimum: 50))
+    ]
+    //this func for call api or json file- also look at line 86 on appear to connect json file
     func loadPetBreedsFromJSON() -> [PetBreedModal] {
         guard let url = Bundle.main.url(forResource: "PetData", withExtension: "json") else {
             print("❌ pets.json not found in bundle")
@@ -34,17 +80,19 @@ struct HomeView: View {
             return []
         }
     }
-    
-    var rows: [GridItem] = [
-        GridItem(.flexible(minimum: 50),spacing: 0)
-    ]
-    
+
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 0) {
-                    SearchBoxCompView(borderColorVar: Color(hex: AppThemeColor.orange))
+                    //search bar
                     
+                    SearchBoxCompView(
+                       // storeUserInput:variable comfrom search box component
+                        storeUserInput: $searchText,
+                        borderColorVar: Color(hex: AppThemeColor.orange))
+                    
+                        
                     Button {
                         
                     } label: {
@@ -61,15 +109,16 @@ struct HomeView: View {
                     
                 }
                 
-                OvalPetTypeMapCompView()
+                OvalPetTypeMapCompView(selectedPet: catergory.rawValue)
                     .padding(.bottom, 10)
                     .frame(height: 180)
                     .padding(.vertical, 5)
-                    .background(Color.green)
+                
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows, spacing: 15) {
-                        ForEach(pets) { pet in
+//                        ForEach(pets) { pet in
+                        ForEach(filteredItems) { pet in
                             PetCardView(
                                 petName: pet.petName,
                                 distance: pet.address.city,
@@ -78,41 +127,90 @@ struct HomeView: View {
                             .padding(.vertical, 10)
                             .frame(width: 200)
                         }
-                        //                        .padding(.top, -50)
+                        .padding(.top, -50)
                         .padding(.leading, 25)
-                    }//close lazy grid
-                    .frame(height: 220)
-                    .background(Color.pink)
-                    .onAppear {
-                        pets = loadPetBreedsFromJSON()
                     }
-            
-                }//close scrollview
-                .frame(height: 220)
-                .background(Color.blue)
+                    .onAppear {
+                        pets = self.loadPetBreedsFromJSON()
+                    }
+                    
+                    Spacer()
+                }
                 .padding(.horizontal, 5)
                 
                 
                 Spacer()
             }//close main v stack
             
-            .padding(.leading, 10)
+       
             .padding(.trailing, 10)
             
             .navigationBarItems(leading: VStack(alignment: .leading, spacing: 10) {
                 Text("Let's Find")
                     .padding(.top, 50)
                 Text("Little Friends!")
+                
                     .font(.title)
             }
+                .padding(.leading, 0)
             )
-            .padding(.leading, 5)
             .padding(.top, 80)
             .fontWeight(.semibold)
-            
-        }
+        }//close navigation stag/control the whole screen
+        
+        .padding(.leading, 10)
     }
 }
 #Preview {
     HomeView()
 }
+
+
+//enum SearchUsing {
+//
+//    case name
+//
+//    case category
+//
+//    case type
+//
+//    case distance
+//
+//    case size
+//
+//}
+//
+//
+//var searchingUsing: SearchUsing = .name
+//
+//searchingUsing = .category
+//
+//var isSearchForName: Bool = true
+//
+//var filteredData: [PetMode] {
+//
+//    switch searchingUsing {
+//
+//    case .name:
+//
+//        return filteredData.filter({$0.name == "text we are searcimg"} ||  $0.category == "text we are searcimg" || {$0.type == "text we are searcimg"} || {$0.distance == "text we are searcimg"} )
+//
+//    case .category:
+//
+//        return filteredData.filter({$0.category == "text we are searcimg"})
+//
+//    case .type:
+//
+//        return filteredData.filter({$0.type == "text we are searcimg"})
+//
+//    case .distance:
+//
+//        return filteredData.filter({$0.distance == "text we are searcimg"})
+//
+//=
+//
+//    case .size
+//
+//    }
+//
+//}

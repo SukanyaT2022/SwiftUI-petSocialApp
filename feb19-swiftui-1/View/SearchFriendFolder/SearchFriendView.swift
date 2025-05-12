@@ -11,7 +11,7 @@ struct SearchFriendView: View {
    
     var body: some View {
         VStack(spacing: 1){
-            SearchBoxCompView(borderColorVar: .init(Color(hex: AppThemeColor.orange)))
+//            SearchBoxCompView(borderColorVar: .init(Color(hex: AppThemeColor.orange)))
             
             SingleBoxMapCompView()
                 .padding(.horizontal, 20)

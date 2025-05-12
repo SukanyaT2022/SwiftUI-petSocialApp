@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBoxCompView: View {
-    @State var storeUserInput: String = ""
+ @Binding var storeUserInput: String 
     var borderColorVar: Color = .gray
     var body: some View {
         HStack{
@@ -28,6 +28,6 @@ struct SearchBoxCompView: View {
     }
 }
 
-#Preview {
-    SearchBoxCompView()
-}
+//#Preview {
+//    SearchBoxCompView()
+//}
