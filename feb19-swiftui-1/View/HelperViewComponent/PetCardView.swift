@@ -6,12 +6,12 @@ struct PetCardView: View {
     let petName: String
     let distance: String
     let imageName: String
-
+    let petType: String
     var body: some View {
         ZStack(alignment: .topLeading) {
             // Background shape with soft peach color
             TriangleBoxMapView()
-
+            
             VStack(alignment: .leading, spacing: 8) {
                 // Heart icon
                 Image(systemName: "heart.fill")
@@ -19,26 +19,34 @@ struct PetCardView: View {
                     .padding(6)
                     .background(Circle().fill(Color.white))
                     .padding(.bottom, 10)
-
-                // Pet name
-
-                Text(petName)
-                    .font(.title)
-                    .bold()
-
-                // Distance
-                Text(distance)
-                    .foregroundColor(.gray)
+                
+                VStack(alignment: .leading) {
+                    
+                    // Pet name
+                    
+                    Text(petName)
+                        .font(.title)
+                        .bold()
+                    
+                    // Distance
+                    Text(distance)
+                        .foregroundColor(.gray)
+                    Text(petType)
+                        .foregroundColor(.gray)
+                    
+                    // type
+                }
+                
             }
             .padding()
-            .zIndex(1)
-
+            //            .zIndex(1)
+            
             // Pet image
             Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
-//            offset is posotionin zindex
+                .frame(width: 150, height: 150)
+            //            offset is posotionin zindex
                 .offset(x: 50, y: 5)
         }
     }
@@ -58,5 +66,5 @@ struct TriangleBoxMapView: View {
 
 
 #Preview {
-    PetCardView(petName: "Tom", distance: "2km", imageName: "dog1bg")
+    PetCardView(petName: "Tom", distance: "2km", imageName: "dog1bg", petType: "anypet")
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-enum PetCatergory: String {
+enum PetCatergory: String, CaseIterable {
     case dog
     case cat
     case bird
@@ -24,13 +24,14 @@ struct HomeView: View {
      print(searchText)
      //if nothting on search box then showll pets
      switch catergory {
-         case .dog:
+         case.dog:
          if searchText.isEmpty {
                     return pets
                 } else {
                     return pets.filter {
                         $0.type.lowercased()==("dog".lowercased())
                         || $0.breed.lowercased().contains(searchText.lowercased())
+                        || $0.type.lowercased().contains(searchText.lowercased())
                     }
                 }
          case .cat:
@@ -40,18 +41,43 @@ struct HomeView: View {
                     return pets.filter {
                         $0.type.lowercased()==("cat".lowercased())
                         || $0.breed.lowercased().contains(searchText.lowercased())
+                        || $0.type.lowercased().contains(searchText.lowercased())
                     }
                 }
          
     
      case .bird:
-        break
+         if searchText.isEmpty {
+                    return pets
+                } else {
+                    return pets.filter {
+                        $0.type.lowercased()==("bird".lowercased())
+                        || $0.breed.lowercased().contains(searchText.lowercased())
+                        || $0.type.lowercased().contains(searchText.lowercased())
+                    }
+                }
      case .fish:
-        break
+         if searchText.isEmpty {
+                    return pets
+                } else {
+                    return pets.filter {
+                        $0.type.lowercased()==("fish".lowercased())
+                        || $0.breed.lowercased().contains(searchText.lowercased())
+                        || $0.type.lowercased().contains(searchText.lowercased())
+                    }
+                }
      case .others:
-       break
+         if searchText.isEmpty {
+                    return pets
+                } else {
+                    return pets.filter {
+                        $0.type.lowercased()==("other".lowercased())
+                        || $0.breed.lowercased().contains(searchText.lowercased())
+                        || $0.type.lowercased().contains(searchText.lowercased())
+                    }
+                }
      }
-   return []
+  
         }
     @State private var pets: [PetBreedModal] = []
     
@@ -109,7 +135,7 @@ struct HomeView: View {
                     
                 }
                 
-                OvalPetTypeMapCompView(selectedPet: catergory.rawValue)
+                OvalPetTypeMapCompView(selectedPet: $catergory)
                     .padding(.bottom, 10)
                     .frame(height: 180)
                     .padding(.vertical, 5)
@@ -122,10 +148,11 @@ struct HomeView: View {
                             PetCardView(
                                 petName: pet.petName,
                                 distance: pet.address.city,
-                                imageName: pet.image
+                                imageName: pet.image,
+                                petType: pet.type
                             )
                             .padding(.vertical, 10)
-                            .frame(width: 200)
+                            .frame(width: 300)
                         }
                         .padding(.top, -50)
                         .padding(.leading, 25)

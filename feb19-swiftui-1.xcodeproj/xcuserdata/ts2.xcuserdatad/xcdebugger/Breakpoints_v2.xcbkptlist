@@ -34,64 +34,6 @@
             endingLineNumber = "21"
             landmarkName = "loadDogList()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "514379E7-5C65-4D34-9C9E-145B652C6B2A - 3721b7a1e4af9c8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for feb19_swiftui_1.DogViewModel.loadDogList() async -&gt; ()"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/ViewModel/DogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-               <Location
-                  uuid = "514379E7-5C65-4D34-9C9E-145B652C6B2A - 306cc83aa267fe9e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for feb19_swiftui_1.DogViewModel.loadDogList() async -&gt; ()"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/ViewModel/DogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-               <Location
-                  uuid = "514379E7-5C65-4D34-9C9E-145B652C6B2A - 5ff16ea01c7ac489"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for feb19_swiftui_1.DogViewModel.loadDogList() async -&gt; ()"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/ViewModel/DogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-               <Location
-                  uuid = "514379E7-5C65-4D34-9C9E-145B652C6B2A - 6be93d207fd0a08e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for feb19_swiftui_1.DogViewModel.loadDogList() async -&gt; ()"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/ViewModel/DogViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -108,64 +50,6 @@
             endingLineNumber = "27"
             landmarkName = "fetchDogs()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B5E89B0D-292A-4B4C-8CB4-AC9F5D6241F2 - 86c96d66713a62f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for feb19_swiftui_1.APIService.fetchDogs() async throws -&gt; feb19_swiftui_1.PetData"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/Service_CallApi/ApiCall.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-               <Location
-                  uuid = "B5E89B0D-292A-4B4C-8CB4-AC9F5D6241F2 - ef5842a7e0e51a01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for feb19_swiftui_1.APIService.fetchDogs() async throws -&gt; feb19_swiftui_1.PetData"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/Service_CallApi/ApiCall.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-               <Location
-                  uuid = "B5E89B0D-292A-4B4C-8CB4-AC9F5D6241F2 - 51e9f7380a5ca6fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for feb19_swiftui_1.APIService.fetchDogs() async throws -&gt; feb19_swiftui_1.PetData"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/Service_CallApi/ApiCall.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-               <Location
-                  uuid = "B5E89B0D-292A-4B4C-8CB4-AC9F5D6241F2 - c87a3222f90048ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for feb19_swiftui_1.APIService.fetchDogs() async throws -&gt; feb19_swiftui_1.PetData"
-                  moduleName = "feb19-swiftui-1.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ts2/Documents/swift2025/swiftui2025paw/feb19-swiftui-petsocialMain-updateApi/feb19-swiftui-1/Service_CallApi/ApiCall.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,8 +78,8 @@
             filePath = "feb19-swiftui-1/View/HelperViewComponent/OvalPetTypeMapCompView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -212,6 +96,54 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
+            landmarkName = "filteredItems"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D36829E-C29B-4FDC-990D-43C2C4117D2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "feb19-swiftui-1/View/HomeFolder/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "filteredItems"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1D1D290-D753-493A-A3F5-C85F27949891"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "feb19-swiftui-1/View/HomeFolder/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "PetCatergory"
+            landmarkType = "13">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "115117E4-AACC-4127-B865-F111427EE5C5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "feb19-swiftui-1/View/HomeFolder/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "filteredItems"
             landmarkType = "24">
          </BreakpointContent>

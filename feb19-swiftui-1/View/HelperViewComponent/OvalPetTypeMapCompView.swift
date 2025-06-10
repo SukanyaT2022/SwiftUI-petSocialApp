@@ -11,22 +11,22 @@ struct OvalPetTypeMapCompView: View {
 //    let petArray:[String] = ["cat","dog","bird","fish","lizard"]
     
     struct Pet: Identifiable{
-        let name:String
+        let name: PetCatergory
         let imageName:String
         let id = UUID()
     }
     
     let petArray: [Pet] = [
-        Pet(name: "cat", imageName: "img1"),
-        Pet(name: "dog", imageName: "img2"),
-        Pet(name: "bird", imageName: "img1"),
-        Pet(name: "fish", imageName: "img2"),
-        Pet(name: "lizard", imageName: "img1"),
+        Pet(name: .cat, imageName: "img1"),
+        Pet(name: .bird, imageName: "img2"),
+        Pet(name: .dog, imageName: "img1"),
+        Pet(name: .fish, imageName: "img2"),
+      
         ]
     var rows: [GridItem] = [
         GridItem(.flexible(minimum: 50))
     ]
-    @State var selectedPet: String? = nil
+    @Binding var selectedPet: PetCatergory
     
     var body: some View {
 //        showsIndicators: false for remove slide var 
@@ -37,36 +37,31 @@ struct OvalPetTypeMapCompView: View {
                         
                         ZStack{
                             Rectangle()
-                                .fill(selectedPet == pet.name ? Color(hex: AppThemeColor.orange).opacity(0.2) : Color.gray.opacity(0.5))
+                             
                                 .frame(width: 80, height: 80)
                                 .clipShape(Circle())
-                                .onTapGesture {
-                                 
-                                    if selectedPet == pet.name{
-                                        selectedPet = nil
-                                    }else{
-                                        selectedPet = pet.name
-                                    }
-                                }
-                        }
+                               
+                            OvalBoxView(petType: pet.name.rawValue, petImage: pet.imageName, isSelected:  selectedPet.rawValue == pet.name.rawValue)
+                        }// close zstack
                         
-                        OvalBoxView(petType: pet.name, petImage: pet.imageName)
-                    }
+                        .onTapGesture {
+                            withAnimation{
+                                selectedPet = pet.name
+                            }
+                        }// close
+              
                 }//close lazyHgride
                 .padding() // Add padding for better spacing
-            
+    
             
             }
-        
-        
-        
-        
-        
+        }
         }
     
     struct OvalBoxView: View{
         let petType : String
         let petImage: String
+        let isSelected: Bool
         var body: some View {
             VStack(spacing: 20){
                 Image(petImage)
@@ -77,7 +72,7 @@ struct OvalPetTypeMapCompView: View {
                 Text(petType)
             }
             .frame(width: 110, height: 160)
-            .background(Color(hex: AppThemeColor.veryLightGray))
+            .background(Color(hex:isSelected ? AppThemeColor.orange : AppThemeColor.veryLightGray))
             .clipShape(RoundedRectangle(cornerRadius: 85)) // Half of width/height for fully rounded
             .overlay(
                 RoundedRectangle(cornerRadius: 85)
@@ -89,5 +84,5 @@ struct OvalPetTypeMapCompView: View {
     }
 }
 #Preview {
-    OvalPetTypeMapCompView()
+    OvalPetTypeMapCompView(selectedPet: .constant(.cat))
 }
