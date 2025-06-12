@@ -47,7 +47,7 @@ struct PetCardView: View {
                 .scaledToFit()
                 .frame(width: 150, height: 150)
             //            offset is posotionin zindex
-                .offset(x: 50, y: 5)
+                .offset(x: 100, y: 5)
         }
     }
 }

@@ -51,7 +51,8 @@ struct OvalPetTypeMapCompView: View {
                         }// close
               
                 }//close lazyHgride
-                .padding() // Add padding for better spacing
+                    .padding(.horizontal,4)
+                // Add padding for better spacing
     
             
             }

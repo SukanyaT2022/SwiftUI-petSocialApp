@@ -23,60 +23,67 @@ struct HomeView: View {
  var filteredItems: [PetBreedModal] {
      print(searchText)
      //if nothting on search box then showll pets
-     switch catergory {
-         case.dog:
-         if searchText.isEmpty {
-                    return pets
-                } else {
-                    return pets.filter {
-                        $0.type.lowercased()==("dog".lowercased())
-                        || $0.breed.lowercased().contains(searchText.lowercased())
-                        || $0.type.lowercased().contains(searchText.lowercased())
-                    }
-                }
-         case .cat:
-         if searchText.isEmpty {
-                    return pets
-                } else {
-                    return pets.filter {
-                        $0.type.lowercased()==("cat".lowercased())
-                        || $0.breed.lowercased().contains(searchText.lowercased())
-                        || $0.type.lowercased().contains(searchText.lowercased())
-                    }
-                }
+     return pets.filter {
+         $0.type.lowercased() ==   catergory.rawValue.lowercased()
+         ||
+         $0.type.lowercased() ==   searchText.lowercased()
+       ||
          
-    
-     case .bird:
-         if searchText.isEmpty {
-                    return pets
-                } else {
-                    return pets.filter {
-                        $0.type.lowercased()==("bird".lowercased())
-                        || $0.breed.lowercased().contains(searchText.lowercased())
-                        || $0.type.lowercased().contains(searchText.lowercased())
-                    }
-                }
-     case .fish:
-         if searchText.isEmpty {
-                    return pets
-                } else {
-                    return pets.filter {
-                        $0.type.lowercased()==("fish".lowercased())
-                        || $0.breed.lowercased().contains(searchText.lowercased())
-                        || $0.type.lowercased().contains(searchText.lowercased())
-                    }
-                }
-     case .others:
-         if searchText.isEmpty {
-                    return pets
-                } else {
-                    return pets.filter {
-                        $0.type.lowercased()==("other".lowercased())
-                        || $0.breed.lowercased().contains(searchText.lowercased())
-                        || $0.type.lowercased().contains(searchText.lowercased())
-                    }
-                }
+         $0.breed.lowercased().contains(searchText.lowercased())
+//         || $0.type.lowercased().contains(searchText.lowercased()))
+         
      }
+//     if searchText.isEmpty {
+//                return pets
+//            } else {
+//                
+//            }
+//     switch catergory {
+//         case.dog:
+//       
+//         case .cat:
+//         if searchText.isEmpty {
+//                    return pets
+//                } else {
+//                    return pets.filter {
+//                        $0.type.lowercased()==("cat".lowercased())
+//                        || $0.breed.lowercased().contains(searchText.lowercased())
+//                        || $0.type.lowercased().contains(searchText.lowercased())
+//                    }
+//                }
+//         
+//    
+//     case .bird:
+//         if searchText.isEmpty {
+//                    return pets
+//                } else {
+//                    return pets.filter {
+//                        $0.type.lowercased()==("bird".lowercased())
+//                        || $0.breed.lowercased().contains(searchText.lowercased())
+//                        || $0.type.lowercased().contains(searchText.lowercased())
+//                    }
+//                }
+//     case .fish:
+//         if searchText.isEmpty {
+//                    return pets
+//                } else {
+//                    return pets.filter {
+//                        $0.type.lowercased()==("fish".lowercased())
+//                        || $0.breed.lowercased().contains(searchText.lowercased())
+//                        || $0.type.lowercased().contains(searchText.lowercased())
+//                    }
+//                }
+//     case .others:
+//         if searchText.isEmpty {
+//                    return pets
+//                } else {
+//                    return pets.filter {
+//                        $0.type.lowercased()==("other".lowercased())
+//                        || $0.breed.lowercased().contains(searchText.lowercased())
+//                        || $0.type.lowercased().contains(searchText.lowercased())
+//                    }
+//                }
+//     }//close swicth
   
         }
     @State private var pets: [PetBreedModal] = []
@@ -152,10 +159,10 @@ struct HomeView: View {
                                 petType: pet.type
                             )
                             .padding(.vertical, 10)
-                            .frame(width: 300)
+                            .padding(.horizontal, 16)
                         }
                         .padding(.top, -50)
-                        .padding(.leading, 25)
+//                        .padding(.leading, 25)
                     }
                     .onAppear {
                         pets = self.loadPetBreedsFromJSON()
