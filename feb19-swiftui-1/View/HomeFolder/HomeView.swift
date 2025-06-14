@@ -11,28 +11,46 @@ enum PetCatergory: String, CaseIterable {
     case cat
     case bird
     case fish
-  case others
+  case none
 }
 struct HomeView: View {
     //store what user enter in search box
     //pur enum below - default is dog
-    @State var catergory: PetCatergory = .dog
+    @State var catergory: PetCatergory = .none
     
     @State var searchText: String = ""
     
  var filteredItems: [PetBreedModal] {
      print(searchText)
-     //if nothting on search box then showll pets
-     return pets.filter {
-         $0.type.lowercased() ==   catergory.rawValue.lowercased()
-         ||
-         $0.type.lowercased() ==   searchText.lowercased()
-       ||
-         
-         $0.breed.lowercased().contains(searchText.lowercased())
-//         || $0.type.lowercased().contains(searchText.lowercased()))
-         
+     //-- searchbox-if nothting on search box then showll pets
+     if catergory == .none {
+      //below user type on search text or not
+         if searchText.isEmpty {
+             return pets
+         }else {
+//             if user type something go to line 32 to 38- filter something
+             return pets.filter {
+              
+                 $0.type.lowercased() ==   searchText.lowercased()
+                 ||
+                 
+                 $0.breed.lowercased().contains(searchText.lowercased())
+             }
+         }
+     }else{
+         //oval caterory - if user select click oval catergory
+         return pets.filter {
+             $0.type.lowercased() ==   catergory.rawValue.lowercased()
+             ||
+             $0.type.lowercased() ==   searchText.lowercased()
+           ||
+             
+             $0.breed.lowercased().contains(searchText.lowercased())
+    //         || $0.type.lowercased().contains(searchText.lowercased()))
+             
+         }
      }
+    
 //     if searchText.isEmpty {
 //                return pets
 //            } else {
