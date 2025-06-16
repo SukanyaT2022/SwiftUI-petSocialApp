@@ -133,6 +133,7 @@ struct HomeView: View {
     }
 
     var body: some View {
+        
         NavigationStack {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 0) {
@@ -168,20 +169,20 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows, spacing: 15) {
-//                        ForEach(pets) { pet in
                         ForEach(filteredItems) { pet in
-                            PetCardView(
-                                petName: pet.petName,
-                                distance: pet.address.city,
-                                imageName: pet.image,
-                                petType: pet.type
-                            )
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 16)
+                            NavigationLink(destination: PetDetail(petPassDataFromtHomeVar: pet)) {
+                                PetCardView(
+                                    petName: pet.petName,
+                                    distance: pet.address.city,
+                                    imageName: pet.image,
+                                    petType: pet.type
+                                )
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 16)
+                            }
                         }
-                        .padding(.top, -50)
-//                        .padding(.leading, 25)
                     }
+                }
                     .onAppear {
                         pets = self.loadPetBreedsFromJSON()
                     }
@@ -196,23 +197,23 @@ struct HomeView: View {
             
        
             .padding(.trailing, 10)
-            
-            .navigationBarItems(leading: VStack(alignment: .leading, spacing: 10) {
-                Text("Let's Find")
-                    .padding(.top, 50)
-                Text("Little Friends!")
-                
-                    .font(.title)
-            }
-                .padding(.leading, 0)
-            )
+    
+//            .navigationBarItems(leading: VStack(alignment: .leading, spacing: 10) {
+//                Text("Let's Find")
+//                    .padding(.top, 50)
+//                Text("Little Friends!")
+//                
+//                    .font(.title)
+//            }
+                .toolbar(.hidden,for: .navigationBar)
+//                .padding(.leading, 0)
+//            )
             .padding(.top, 80)
             .fontWeight(.semibold)
+      
         }//close navigation stag/control the whole screen
-        
-        .padding(.leading, 10)
     }
-}
+
 #Preview {
     HomeView()
 }

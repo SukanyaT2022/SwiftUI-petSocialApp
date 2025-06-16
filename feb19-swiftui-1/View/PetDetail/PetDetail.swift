@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PetDetail: View {
     let petProperty = ["Breed", "Age", "Gender", "Size"]
+    var petPassDataFromtHomeVar: PetBreedModal
     var body: some View {
+     // pass data from homeview after user select data
+        
         
             
             VStack{
@@ -32,5 +35,5 @@ struct PetDetail: View {
 }
 
 #Preview {
-    PetDetail()
+//    PetDetail()
 }

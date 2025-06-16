@@ -12,7 +12,7 @@ struct FactData: Codable {
 
 struct Fact: Codable {
     let id: String
-         let type:String
+    let type:String
     let attributes: AttributesFact
 }
 struct AttributesFact: Codable {
