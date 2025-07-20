@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct LoginView: View {
     @State var usernameVar:String = ""
@@ -49,6 +50,18 @@ struct LoginView: View {
                         showAlert = true
                         alertMessage = "Forget Password!"
                     }
+                
+
+                    func signUp(email: String, password: String) {
+                        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                            if let error = error {
+                                print("Sign-up error: \(error.localizedDescription)")
+                            } else {
+                                print("User signed up: \(result?.user.uid ?? "")")
+                            }
+                        }
+                    }
+
                 })
                 Text("No Account? Please register")
                     .onTapGesture {

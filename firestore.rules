@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Rules for petCollectionArray collection
+    match /petCollectionArray/{document} {
+      // Allow read and write for all users (authenticated and unauthenticated)
+      allow read, write: if true;
+    }
+    
+    // Rules for petsCollection collection
+    match /petsCollection/{document} {
+      // Allow read and write for all users (authenticated and unauthenticated)
+      allow read, write: if true;
+    }
+    
+    // Optional: Rules for any other collections you might add in the future
+    match /{document=**} {
+      // Allow read and write for all users to any collection
+      // Note: This is very permissive - use with caution in production
+      allow read, write: if true;
+    }
+  }
+} 

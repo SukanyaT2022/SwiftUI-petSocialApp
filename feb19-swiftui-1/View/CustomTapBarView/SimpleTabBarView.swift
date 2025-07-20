@@ -11,24 +11,37 @@ struct SimpleTabBarView: View {
     var body: some View {
         TabView {
             //attach home view with tab view
-            HomeView()
+            //each view have it own navigation stack
+            NavigationStack{
+                HomeView()
+                 
+                    .toolbar(.visible, for: .navigationBar)
+                             
+            }
+            //close navigation
                 .tabItem {
                     Label("Main", systemImage: "house")
                 }
+     
+        //close navigationStack
             
-           HomeView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
+          
             LoginView()
                 .tabItem {
                     Label("Favourite", systemImage: "heart.fill")
                 }
+                
+            DataUploadView()
+                .tabItem {
+                    Label("Upload", systemImage: "icloud.and.arrow.up")
+                }
+                
             PetRegister()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
-        }
+        }//close table view
+        
         //target icon - change color when click
 //        .tint(Color(Color(hex: AppThemeColor.veryLightGray)))
      

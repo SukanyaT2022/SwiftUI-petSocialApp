@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Rules for petCollectionArray collection - Requires Authentication
+    match /petCollectionArray/{document} {
+      // Only allow read and write for authenticated users
+      allow read, write: if request.auth != null;
+    }
+    
+    // Rules for petsCollection collection - Requires Authentication
+    match /petsCollection/{document} {
+      // Only allow read and write for authenticated users
+      allow read, write: if request.auth != null;
+    }
+    
+    // Rules for user-specific data (if you add user collections later)
+    match /users/{userId} {
+      // Users can only access their own documents
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Optional: Public read-only access for specific collections
+    match /publicPets/{document} {
+      // Anyone can read, only authenticated users can write
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+} 
