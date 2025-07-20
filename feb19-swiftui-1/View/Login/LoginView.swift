@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
-import FirebaseAuth
+import FirebaseAuth // FirebaseAuth is a third party sdk of firebase
 
 struct LoginView: View {
     @State var usernameVar:String = ""
     @State var passwordVar:String = ""
     @State var showAlert:Bool = false
     @State var alertMessage:String = ""
+    
+    func singup(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Sign-up error: \(error.localizedDescription)")
+            } else {
+                self.navigateToHomeView()
+                print("User signin: \(result?.user.uid ?? "")")
+            }
+        }
+    }
     var body: some View {
     //connect green below line
         NavigationStack{
@@ -51,16 +62,8 @@ struct LoginView: View {
                         alertMessage = "Forget Password!"
                     }
                 
-
-                    func signUp(email: String, password: String) {
-                        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                            if let error = error {
-                                print("Sign-up error: \(error.localizedDescription)")
-                            } else {
-                                print("User signed up: \(result?.user.uid ?? "")")
-                            }
-                        }
-                    }
+                    self.singup(email: "hello@yopmail.com", password: "987654")
+                   
 
                 })
                 Text("No Account? Please register")
@@ -81,6 +84,14 @@ struct LoginView: View {
                 window.makeKeyAndVisible()
             }
         }
+    
+    func navigateToHomeView() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = UIHostingController(rootView: HomeView())
+            window.makeKeyAndVisible()
+        }
+    }
 
         }
        

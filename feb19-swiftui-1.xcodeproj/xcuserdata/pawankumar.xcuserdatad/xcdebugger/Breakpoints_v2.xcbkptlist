@@ -50,6 +50,36 @@
             endingLineNumber = "28"
             landmarkName = "fetch(url:model:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C00C811F-8735-49B0-901B-87FBFAFAB82B - 26c543ef245dde32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for feb19_swiftui_1.NetworkManager.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: Swift.String, model: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "feb19-swiftui-1.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pawankumar/Documents/MyGitHubProject/SwiftUI-petSocialApp/feb19-swiftui-1/Network_Url_mainApiCall/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+               <Location
+                  uuid = "C00C811F-8735-49B0-901B-87FBFAFAB82B - 26c543ef245dde32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for feb19_swiftui_1.NetworkManager.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(url: Swift.String, model: &#x3c4;_0_0.Type) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "feb19-swiftui-1.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pawankumar/Documents/MyGitHubProject/SwiftUI-petSocialApp/feb19-swiftui-1/Network_Url_mainApiCall/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

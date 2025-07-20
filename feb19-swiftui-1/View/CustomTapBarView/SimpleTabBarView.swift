@@ -36,7 +36,7 @@ struct SimpleTabBarView: View {
                     Label("Upload", systemImage: "icloud.and.arrow.up")
                 }
                 
-            PetRegister()
+            LoginView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
