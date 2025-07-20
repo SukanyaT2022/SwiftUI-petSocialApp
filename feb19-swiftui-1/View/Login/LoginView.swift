@@ -86,6 +86,7 @@ struct LoginView: View {
         }
     
     func navigateToHomeView() {
+        //this line for homepage
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             window.rootViewController = UIHostingController(rootView: HomeView())
