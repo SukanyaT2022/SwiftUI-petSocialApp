@@ -38,26 +38,24 @@ struct HomeView: View {
                 }
             }
         }else{
+            print(searchText)
             //oval caterory - if user select click oval catergory
+            
             return pets.filter {
                 $0.type.lowercased() ==   catergory.rawValue.lowercased()
                 ||
-                $0.type.lowercased() ==   searchText.lowercased()
-                ||
                 
                 $0.breed.lowercased().contains(searchText.lowercased())
-                //         || $0.type.lowercased().contains(searchText.lowercased()))
                 
+                //         || $0.type.lowercased().contains(searchText.lowercased()))
             }
         }
-        
-        
     }
     @State private var pets: [PetBreedModal] = []
     
     
     var rows: [GridItem] = [
-        GridItem(.adaptive(minimum: 300, maximum: 400))
+        GridItem(.adaptive(minimum: 350, maximum: 400))
     ]
     //this func for call api or json file- also look at line 86 on appear to connect json file
     func loadPetBreedsFromJSON() -> [PetBreedModal] {
@@ -119,7 +117,7 @@ struct HomeView: View {
                                 petName: pet.petName,
                                 distance: pet.address.city,
                                 imageName: pet.image,
-                                petType: pet.type
+                                petType: pet.type, petBreed: pet.breed
                             )
                             .padding(.horizontal, 16)
                         }

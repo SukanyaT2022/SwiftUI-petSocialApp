@@ -7,6 +7,7 @@ struct PetCardView: View {
     let distance: String
     let imageName: String
     let petType: String
+    let petBreed: String
     var body: some View {
         ZStack(alignment: .topLeading) {
             // Background shape with soft peach color
@@ -28,12 +29,15 @@ struct PetCardView: View {
                         .font(.title)
                         .bold()
                     
+                    
                     // Distance
                     Text(distance)
                         .foregroundColor(.gray)
                     Text(petType)
                         .foregroundColor(.gray)
-                    
+                    Text(petBreed)
+                        .font(.subheadline)
+                    foregroundColor(.gray)
                     // type
                 }
                 
@@ -66,5 +70,5 @@ struct TriangleBoxMapView: View {
 
 
 #Preview {
-    PetCardView(petName: "Tom", distance: "2km", imageName: "dog1bg", petType: "anypet")
+    PetCardView(petName: "Tom", distance: "2km", imageName: "dog1bg", petType: "anypet", petBreed: "breed")
 }
