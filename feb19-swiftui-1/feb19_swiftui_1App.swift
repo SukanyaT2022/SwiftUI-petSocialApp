@@ -13,10 +13,9 @@ struct feb19_swiftui_1App: App {
         FirebaseApp.configure()
     }
     var body: some Scene {
-        
         WindowGroup {
-            SimpleTabBarView()
-//            PetListView()
+//            SimpleTabBarView()
+            PetListView()
         }
     }
 }
