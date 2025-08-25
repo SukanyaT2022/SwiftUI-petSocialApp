@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterPetScreenView: View {
-    var petDetailClass = PetClass()
+    @State var petDetailClass = PetClass()
     //    var petDetailClass:PetClass = PetClass()
     var body: some View {
         VStack{
@@ -19,7 +19,7 @@ struct RegisterPetScreenView: View {
                 .font(.title)
                 .padding()
             VStack{
-                RoundTextFieldComp()
+                RoundTextFieldComp(filledValue: $petDetailClass.name, placeholder: "Pet Name")
             }
             
         }

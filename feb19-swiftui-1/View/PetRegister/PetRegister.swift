@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PetRegister: View {
-    var petClass: PetClass = PetClass()
+    @State var petClass: PetClass = PetClass()
     var body: some View {
         
         VStack{
@@ -16,12 +16,12 @@ struct PetRegister: View {
                 .padding(.top,40)
             
             VStack(spacing: 20){
-                RoundTextFieldComp(filledValue:petClass.name, placeholder: "Pet Name")
-                RoundTextFieldComp(filledValue:petClass.gender, placeholder: "Pet Gender")
-                RoundTextFieldComp(filledValue:petClass.type, placeholder: "Pet Type")
-                RoundTextFieldComp(filledValue:petClass.breed, placeholder: "Pet Breed")
-                RoundTextFieldComp(filledValue:petClass.size, placeholder: "Pet Size")
-                RoundTextFieldComp(filledValue:petClass.DOB, placeholder: "Pet DOB")
+                RoundTextFieldComp(filledValue:$petClass.name, placeholder: "Pet Name")
+                RoundTextFieldComp(filledValue:$petClass.gender, placeholder: "Pet Gender")
+                RoundTextFieldComp(filledValue:$petClass.type, placeholder: "Pet Type")
+                RoundTextFieldComp(filledValue:$petClass.breed, placeholder: "Pet Breed")
+                RoundTextFieldComp(filledValue:$petClass.size, placeholder: "Pet Size")
+                RoundTextFieldComp(filledValue:$petClass.DOB, placeholder: "Pet DOB")
                 
                 ButtonComp(buttonTitle: "Register") {
                   

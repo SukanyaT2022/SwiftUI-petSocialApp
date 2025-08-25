@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterScreenView: View {
-    var userDetailClass:UserClass = UserClass()
+    @State var userDetailClass:UserClass = UserClass()
 
     var body: some View {
         NavigationStack{
@@ -27,11 +27,11 @@ struct RegisterScreenView: View {
             VStack (spacing: 20){
                 
 //                RoundTextFieldComp(filledValue:petDetailClass.name)
-                RoundTextFieldComp(filledValue:userDetailClass.name, placeholder: "Name")
+                RoundTextFieldComp(filledValue:$userDetailClass.name, placeholder: "Name")
                     
-                RoundTextFieldComp(filledValue:userDetailClass.username, placeholder: "Username")
-                RoundTextFieldComp(filledValue:userDetailClass.password, placeholder: "Password")
-                RoundTextFieldComp(filledValue:userDetailClass.password, placeholder: "Email")
+                RoundTextFieldComp(filledValue:$userDetailClass.username, placeholder: "Username")
+                RoundTextFieldComp(filledValue:$userDetailClass.password, placeholder: "Password")
+                RoundTextFieldComp(filledValue:$userDetailClass.email, placeholder: "Email")
                 ButtonComp(buttonTitle: "Sign Up", handler: {
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let window = windowScene.windows.first{

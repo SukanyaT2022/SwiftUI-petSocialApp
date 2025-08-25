@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RoundTextFieldComp: View {
-    @State var filledValue:String = ""
+    @Binding var filledValue:String
     var placeholder:String = "test"
     
     var body: some View {
@@ -33,5 +33,5 @@ struct RoundTextFieldComp: View {
 }
 
 #Preview {
-    RoundTextFieldComp()
+    RoundTextFieldComp(filledValue: .constant(""), placeholder: "Test")
 }

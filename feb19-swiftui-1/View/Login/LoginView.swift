@@ -15,12 +15,16 @@ struct LoginView: View {
     @State var alertMessage:String = ""
     
     func singup(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Sign-up error: \(error.localizedDescription)")
+                showAlert = true
+                alertMessage = "Invalid Email or Password!"
             } else {
                 self.navigateToHomeView()
                 print("User signin: \(result?.user.uid ?? "")")
+                showAlert = true
+                alertMessage = "User Signin Successfully!"
             }
         }
     }
@@ -42,8 +46,8 @@ struct LoginView: View {
                     .font(.custom("SourGummy-Medium", size: 24))
 
                 VStack(spacing:20){
-                    RoundTextFieldComp(filledValue: usernameVar, placeholder: "UserName")
-                    RoundTextFieldComp(filledValue: passwordVar, placeholder: "Password")
+                    RoundTextFieldComp(filledValue: $usernameVar, placeholder: "UserName")
+                    RoundTextFieldComp(filledValue: $passwordVar, placeholder: "Password")
                     
                 }
                 //close v stack
@@ -60,9 +64,9 @@ struct LoginView: View {
                     }else if(passwordVar.isEmpty){
                         showAlert = true
                         alertMessage = "Forget Password!"
+                    } else {
+                        self.singup(email: usernameVar, password: passwordVar)
                     }
-                
-                    self.singup(email: "hello@yopmail.com", password: "987654")
                    
 
                 })
@@ -73,6 +77,11 @@ struct LoginView: View {
 //this padding box the whole vtasck down after push up by spacer()
             }.padding(.top,100)
             Spacer()
+                }
+                .alert("Login Error", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(alertMessage)
                 }
             }
     //out of body
